@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Go CLI tool</title>
+  <link rel="stylesheet" href="./style.css" type="text/css" media="screen" charset="utf-8">
+</head>
+<body>
+
+<div class="page">
+  <a href="#table-of-contents" class="skip">skip to table of contents</a>
+
+  <header>
+    <h1>
+      Go
+      <small>create, install and use boilerplates</small>
+      <small>with ease</small>
+    </h1>
+  </header>
+
+  <main>
+
+    <h2 id="introduction">Introduction</h2>
+
+    <p>
+      Go is a new tool for creating and using boilerplates designed to be simple
+      to start, and fast to get it done. Go is delivered with a minimal toolset
+      to let you immediately create boilerplates and it can be easily extended with
+      plugins.
+    </p>
+
+    <h2 id="table-of-contents">Table of Contents</h2>
+
+    <nav>
+      <ol>
+        <li>
+          <a href="#introduction">Introduction</a>
+        </li>
+        <li>
+          <a href="#table-of-contents">Table of Contents</a>
+        </li>
+        <li>
+          <a href="#quick-start">Quick Start</a>
+        </li>
+        <li>
+          <a href="#what-is-boilerplate">What is Boilerplate?</a>
+        </li>
+        <li>
+          <a href="#using-boilerplates">Using Boilerplates</a>
+        </li>
+        <li>
+          <a href="#creating-boilerplates">Creating Boilerplates</a>
+
+          <ol>
+            <li>
+              <a href="#meta-files">Meta Files</a>
+            </li>
+            <li>
+              <a href="#using-plugins">Using Plugins</a>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <a href="#what-is-boilerplate">What is Loader?</a>
+
+          <ol>
+            <li>
+              <a href="#git-loader">Git Loader</a>
+            </li>
+            <li>
+              <a href="#more-loaders">More Loaders</a>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <a href="#contributing">Contributing</a>
+
+          <ol>
+            <li>
+              <a href="#creating-plugins">Creating Plugins</a>
+            </li>
+            <li>
+              <a href="#creating-loaders">Creating Loaders</a>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <a href="#links">Links</a>
+        </li>
+      </ol>
+    </nav>
+
+    <h2 id="quick-start">Quick Start</h2>
+
+    <p>
+      For those who like to try it immediately, install go and try our boilerplate:
+    </p>
+
+    <pre>$ npm install --global go
+$ go gocli/template-example new-project</pre>
+
+    <p>
+      You will be asked a few questions and once you answered them the folder <code>new-project</code> will be created with content that variats depends on your input.
+    </p>
+
+    <h2 id="what-is-boilerplate">What is Boilerplate?</h2>
+
+    <p>
+      The boilerplate is just a basic git repository. So if you already have the repository you can install it using go. Here is an example with github repository:
+    </p>
+
+    <pre>$ go &lt;username&gt;/&lt;repository&gt; &lt;destination/path&gt;</pre>
+
+    <blockquote>
+      Go supports many more options to install boilerplates! You may use <a href="#git-loader">different git hostings</a> or even <a href="#more-loaders">different boilerplate sources</a>.
+    </blockquote>
+
+    <h2 id="using-boilerplates">Using Boilerplates</h2>
+
+    <p>
+    </p>
+
+    <h2 id="creating-boilerplates">Creating Boilerplates</h2>
+
+    <p>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+      tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+      vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+      no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    </p>
+
+    <h3 id="meta-files">Meta Files</h3>
+
+    <p>
+      I'll tell you about <code>gofile.js</code> and <code>.goconfig</code>!
+    </p>
+
+    <h3 id="using-plugins">Using Plugins</h3>
+
+    <pre>// gofile.js
+const go = require('go')
+
+go.registerCommand('ping', () => {
+  console.log('pong')
+})</pre>
+
+    <p>
+      If you want to create your own plugin, you can see how to do it <a href="#creating-plugins">Creating Plugins</a> chapter.
+    </p>
+
+    <h2 id="what-is-loader">What is Loader?</h2>
+
+    <h3 id="git-loader">Git Loader</h3>
+
+    <h3 id="more-loaders">More Loaders</h3>
+
+    <p>
+      More loaders can be viewed in <a href="#links-loaders">links section</a>. If you wonder how to create your own loader check <a href="#creating-loaders">Creating Loaders</a> chapter.
+    </p>
+
+    <h2 id="contributing">Contributing</h2>
+
+    <p>
+      Go is higly extensible for yout needs!
+    </p>
+
+    <h3 id="creating-plugins">Creating Plugins</h3>
+
+    <p>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+      tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+      vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+      no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    </p>
+
+    <h3 id="creating-loaders">Creating Loaders</h3>
+
+    <p>
+      Do not name your plugins after go-lang commands.
+    </p>
+
+    <h2 id="links">Links</h2>
+
+    <p>
+      If you willing to see more, visit our <a href="https://github.com/gocli/awesome-go">awesome-go</a> page.
+    </p>
+
+    <h3 id="links-plugins">Plugins</h3>
+
+    <ul>
+      <li>
+        <a href="https://npmjs.org/package/go-plugin-cli">Cli Plugin</a>
+        - register and execute commands.
+      </li>
+      <li>
+        <a href="https://npmjs.org/package/go-plugin-fs">FS Plugin</a>
+        - simplify the work with files and folders.
+      </li>
+      <li>
+        <a href="https://npmjs.org/package/go-plugin-quiz">Quiz Plugin</a>
+        - collect user input.
+      </li>
+      <li>
+        <a href="https://npmjs.org/package/go-plugin-handlebars">Handlebars Plugin</a>
+        - process templates using <a href="http://handlebarsjs.com/">Handlebars</a> templates.
+      </li>
+    </ul>
+
+    <h3 id="links-loaders">Loaders</h3>
+
+    <ul>
+      <li>
+        <a href="https://npmjs.org/package/go-loader-git">Git Loader</a>
+        - installs boilerplates from <a href="https://github.com/">GitHub</a>, <a href="https://bitbucket.org/">Bitbucket</a>, <a href="https://gitlab.com/">GitLab</a> or any other git repository available via SSH.
+      </li>
+      <li>
+        <a href="https://npmjs.org/package/go-loader-yo">Yeoman Loader</a>
+        - installs <a href="http://yeoman.io/">Yeoman</a> <a href="http://yeoman.io/generators/">generators</a>.
+      </li>
+      <li>
+        <a href="https://npmjs.org/package/go-loader-vue">VueJS Loader</a>
+        - installs <a href="https://vuejs.org/">VueJS</a> <a href="https://github.com/vuejs-templates/">templates</a>.
+      </li>
+    </ul>
+
+    <h3 id="links-templates">Templates</h3>
+
+    <ul>
+      <li>
+        <a href="https://github.com/gocli/template">gocli/template-example</a>
+        - an example boilerplate that shows how to build very basic boilerplate.
+      </li>
+      <li>
+        <a href="https://github.com/gocli/template">gocli/template-full-example</a>
+        - boilerplate that uses all features that are delivered with pure <strong>go</strong> installation.
+      </li>
+    </ul>
+
+  </main>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  background: #fff;
+  /*background: slategray;*/
+}
+
+body {
+  font-size: 16px;
+}
+
+.page {
+  color: #444;
+  font: 200 1em/1.2 BlinkMacSystemFont, -apple-system, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif;
+  padding-bottom: 8em;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 200;
+}
+
+h1 {
+  font-size: 5em;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 2.6em;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+pre {
+  font: 400 1em/1.4 monospace;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 1em .5em;
+  margin: 1.5em 0;
+  overflow: auto;
+}
+
+code {
+  vertical-align: top;
+  font: 400 1em/1.2 monospace;
+}
+
+blockquote {
+  margin: 1em;
+  border-left: 1px solid #ddd;
+  padding: .3em 0 .3em 1em;
+  color: #777;
+}
+
+a {
+  color: #666;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+  color: #777;
+}
+
+strong {
+  font-weight: 500;
+}
+
+.skip {
+  padding: .2em;
+  margin: .2em;
+  display: inline-block;
+  color: transparent;
+}
+
+header, main {
+  max-width: 786px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 1.5em;
+}
+
+header {
+  text-align: center;
+  padding: 9em 1em 10em;
+}
+
+header small {
+  display: block;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+nav li {
+  margin-top: .4em;
+}
+
+nav ol {
+  list-style: disc;
+}
+
+nav ol ol {
+  list-style: circle;
+  padding-left: 2em;
+}
+
