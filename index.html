@@ -99,7 +99,7 @@
     </p>
 
     <pre>$ npm install --global go
-$ go gocli/template-example new-project</pre>
+$ go git git@github.com:gocli/boilerplate-example.git</pre>
 
     <p>
       You will be asked a few questions and once you answered them the folder <code>new-project</code> will be created with content that variats depends on your input.
@@ -111,7 +111,7 @@ $ go gocli/template-example new-project</pre>
       The boilerplate is just a basic git repository. So if you already have the repository you can install it using go. Here is an example with github repository:
     </p>
 
-    <pre>$ go &lt;username&gt;/&lt;repository&gt; &lt;destination/path&gt;</pre>
+    <pre>$ go git git@github.com:&lt;username&gt;/&lt;repository&gt;.git &lt;destination/path&gt;</pre>
 
     <blockquote>
       Go supports many more options to install boilerplates! You may use <a href="#git-loader">different git hostings</a> or even <a href="#more-loaders">different boilerplate sources</a>.
@@ -203,8 +203,8 @@ go.registerCommand('ping', () => {
         - collect user input.
       </li>
       <li>
-        <a href="https://npmjs.org/package/go-plugin-handlebars">Handlebars Plugin</a>
-        - process templates using <a href="http://handlebarsjs.com/">Handlebars</a> templates.
+        <a href="https://npmjs.org/package/go-plugin-templates">Templates Plugin</a>
+        - process templates using <a href="https://www.npmjs.com/package/ejs">Embedded JavaScript templates</a>.
       </li>
     </ul>
 
@@ -213,15 +213,7 @@ go.registerCommand('ping', () => {
     <ul>
       <li>
         <a href="https://npmjs.org/package/go-loader-git">Git Loader</a>
-        - installs boilerplates from <a href="https://github.com/">GitHub</a>, <a href="https://bitbucket.org/">Bitbucket</a>, <a href="https://gitlab.com/">GitLab</a> or any other git repository available via SSH.
-      </li>
-      <li>
-        <a href="https://npmjs.org/package/go-loader-yo">Yeoman Loader</a>
-        - installs <a href="http://yeoman.io/">Yeoman</a> <a href="http://yeoman.io/generators/">generators</a>.
-      </li>
-      <li>
-        <a href="https://npmjs.org/package/go-loader-vue">VueJS Loader</a>
-        - installs <a href="https://vuejs.org/">VueJS</a> <a href="https://github.com/vuejs-templates/">templates</a>.
+        - installs boilerplates from <a href="https://github.com/">GitHub</a>, <a href="https://bitbucket.org/">Bitbucket</a>, <a href="https://gitlab.com/">GitLab</a> or any other git repository available via SSH or HTTP.
       </li>
     </ul>
 
@@ -229,11 +221,7 @@ go.registerCommand('ping', () => {
 
     <ul>
       <li>
-        <a href="https://github.com/gocli/template">gocli/template-example</a>
-        - an example boilerplate that shows how to build very basic boilerplate.
-      </li>
-      <li>
-        <a href="https://github.com/gocli/template">gocli/template-full-example</a>
+        <a href="https://github.com/gocli/boilerplate-example">gocli/boilerplate-example</a>
         - boilerplate that uses all features that are delivered with pure <strong>go</strong> installation.
       </li>
     </ul>
