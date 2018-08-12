@@ -1,11 +1,10 @@
 html, body {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 html {
   background: #fff;
-  /*background: slategray;*/
 }
 
 body {
@@ -20,8 +19,8 @@ body {
 
 h1, h2, h3, h4 {
   font-weight: 200;
-  margin-top: 1.1em;
   margin-bottom: .5em;
+  margin-top: 1.1em;
 }
 
 h1 {
@@ -42,24 +41,24 @@ h4 {
 }
 
 pre {
-  font: 200 1em/1.4 "Courier New", Courier, monospace;
-  border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  padding: 1em .5em;
+  border-top: 1px solid #ddd;
+  font: 200 1em/1.4 "Courier New", Courier, monospace;
   margin: 1.5em 0;
   overflow: auto;
+  padding: 1em .5em;
 }
 
 code {
-  vertical-align: top;
   font: 200 1em/1.2 "Courier New", Courier, monospace;
+  vertical-align: top;
 }
 
 blockquote {
-  margin: 1em;
   border-left: 1px solid #ddd;
-  padding: .3em 0 .3em 1em;
   color: #777;
+  margin: 1em;
+  padding: .3em 0 .3em 1em;
 }
 
 a {
@@ -67,8 +66,8 @@ a {
 }
 
 a:hover, a:focus {
-  text-decoration: none;
   color: #777;
+  text-decoration: none;
 }
 
 strong {
@@ -76,23 +75,23 @@ strong {
 }
 
 .skip {
-  padding: .2em;
-  margin: .2em;
-  display: inline-block;
   color: transparent;
+  display: inline-block;
+  margin: .2em;
+  padding: .2em;
 }
 
 header, main {
-  max-width: 686px;
-  margin: 0 auto;
   box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 686px;
   padding: 0 2em;
 }
 
 header {
-  text-align: center;
   padding-bottom: 10em;
   padding-top: 9em;
+  text-align: center;
 }
 
 header small {
@@ -121,11 +120,15 @@ nav ol ol {
   }
 
   h1, h2, h3, h4 {
-    font-weight: 300;
     color: #555;
+    font-weight: 300;
   }
 
   strong {
     font-weight: 600;
+  }
+
+  pre, code {
+    font-weight: 400;
   }
 }
