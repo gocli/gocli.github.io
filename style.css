@@ -14,7 +14,7 @@ body {
 
 .page {
   color: #444;
-  font: 200 1em/1.2 BlinkMacSystemFont, -apple-system, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif;
+  font: 200 1em/1.3 BlinkMacSystemFont, -apple-system, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif;
   padding-bottom: 8em;
 }
 
@@ -113,3 +113,16 @@ nav ol ol {
   padding-left: 2em;
 }
 
+@media (max-width: 767px) {
+  .page {
+    font-weight: 400;
+  }
+
+  h1, h2, h3, h4 {
+    font-weight: 400;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+}
