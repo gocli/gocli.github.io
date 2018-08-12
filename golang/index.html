@@ -16,7 +16,7 @@
 
     <a href="/">&lt; main page</a>
 
-    <h2 id="go-lang">Go Lang</h2>
+    <h1 id="go-lang">Go Lang</h1>
 
     <p>
       Go CLI uses the name "<code>go</code>" in your terminal to give you all of its benefits.
@@ -39,13 +39,40 @@
         </li>
         <li>
           <a href="#troubleshooting">Troubleshooting</a>
+
+          <ol>
+            <li>
+              <a href="#check-path-order">Check Path order</a>
+            </li>
+          </ol>
         </li>
       </ol>
     </nav>
 
     <h2 id="how-does-it-work">How does it work</h2>
 
+    <p>
+      When you run Go CLI and it can not recognize the command it looks for other binaries with the name "<code>go</code>".
+      If it matches something it will execute it with given arguments.
+      Otherwise the error will be thrown.
+    </p>
+
+    <p>
+      If it works differently read <a href="#">troubleshooting</a> section.
+    </p>
+
     <h2 id="#troubleshooting">Troubleshooting</h2>
+
+    <p>
+      If Go CLI works not as expected you may do steps.
+    </p>
+
+    <h3 id="check-path-order">Check Path order</h3>
+
+    <p>
+      To make Go CLI work its binary should be "on top" of others in the system.
+      In other words: when you type and execute <code>go</code> command it should run Go CLI.
+    </p>
   </main>
 </div>
 
