@@ -46,17 +46,17 @@
           <a href="#what-is-boilerplate">What is Boilerplate?</a>
         </li>
         <li>
-          <a href="#using-boilerplates">Using Boilerplates</a>
-        </li>
-        <li>
           <a href="#creating-boilerplates">Creating Boilerplates</a>
 
           <ol>
             <li>
-              <a href="#meta-files">Meta Files</a>
+              <a href="#goconfig">.goconfig</a>
             </li>
             <li>
-              <a href="#using-plugins">Using Plugins</a>
+              <a href="#gofile">gofile.js</a>
+            </li>
+            <li>
+              <a href="#go-plugins">Go Plugins</a>
             </li>
           </ol>
         </li>
@@ -66,9 +66,6 @@
           <ol>
             <li>
               <a href="#git-loader">Git Loader</a>
-            </li>
-            <li>
-              <a href="#more-loaders">More Loaders</a>
             </li>
           </ol>
         </li>
@@ -93,7 +90,7 @@
     <h2 id="quick-start">Quick Start</h2>
 
     <p>
-      For those who like to try it immediately, install <strong>Go</strong> and try our boilerplate:
+      For those who would like to try it immediately, install <strong>Go</strong> and try our boilerplate:
     </p>
 
     <pre>$ npm install --global go
@@ -115,71 +112,210 @@ $ go git git@github.com:gocli/boilerplate-example.git</pre>
 
     <blockquote>
       <strong>Go</strong> supports many more options to install boilerplates!
-      You may use <a href="#git-loader">different git hostings</a> or even <a href="#more-loaders">different boilerplate sources</a>.
-    </blockquote>
-
-    <h2 id="using-boilerplates">Using Boilerplates</h2>
-
-    <p>
-    </p>
+      You may use <a href="#git-loader">any git hostings</a>, <a href="#links-loaders">different boilerplate sources</a> or even <a href="#what-is-loader">create your own loader</a>.
+    </blockquote>>
 
     <h2 id="creating-boilerplates">Creating Boilerplates</h2>
 
     <p>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-      At vero eos et accusam et justo duo dolores et ea rebum.
-      Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      Creating boilerplates is as easy as putting needed files in a right place in one folder.
+      After you will host your boilerplate <a href="#links-loaders">somewhere</a> you and others will be able to install them via Go.
+      In addition to that you can you can put Go meta files to your boilerplate to configure it and add some API.
     </p>
 
-    <h3 id="meta-files">Meta Files</h3>
+    <h3 id="goconfig">.goconfig.json</h3>
 
     <p>
-      I'll tell you about <code>gofile.js</code> and <code>.goconfig</code>!
+      If you need to run a script after your boilerplate is loaded add <code>.goconfig.json</code> file to your boilerplate.
+      It should contain key <strong>install</strong> with a string as a value that will be executed in a shell.
     </p>
 
-    <h3 id="using-plugins">Using Plugins</h3>
+    <p>
+      Run Make command:
+    </p>
 
-    <pre>// gofile.js
-const go = require('go')
+    <pre>{ "install": "make" }</pre>
 
-go.registerCommand('ping', () => {
-  console.log('pong')
+    <p>
+      Execute JavaScript file:
+    </p>
+
+    <pre>{ "install": "node scripts/install.js" }</pre>
+
+    <p>
+      Install node dependencies and run Go command:
+    </p>
+
+    <pre>{ "install": "npm install && go install" }</pre>
+
+    <h3 id="gofile">gofile.js</h3>
+
+    <p>
+      <code>gofile.js</code> is an engine of your boilerplate.
+      Using this file you are able to create an API for your boilerplate in a fast way thanks to plugins.
+      Here is an example of using it:
+    </p>
+
+    <pre>const go = require('go')
+
+go.registerCommand('install', async () => {
+  const name = go.ask('Let\'s name your project first:')
+  const yarn = go.confirm('Do you want to use Yarn instead of NPM?')
+  go.processTemplates({ name, yarn })
 })</pre>
+
+    <h3 id="go-plugins">Go Plugins</h3>
+
+    <p>
+      Go plugin is basically just a function that extends Go prototype object.
+      There is a list of plugins that are pre-installed with GO:
+    </p>
+
+    <ul>
+      <li><a href="https://npmjs.org/package/go-plugin-fs">Go FS</a> &dash; working with file system</li>
+      <li><a href="https://npmjs.org/package/go-plugin-cli">Go CLI</a> &dash; creating CLI API</li>
+      <li><a href="https://npmjs.org/package/go-plugin-templates">Go Templates</a> &dash; processing your templates</li>
+      <li><a href="https://npmjs.org/package/go-plugin-quiz">Go Quiz</a> &dash; collecting an input from user</li>
+    </ul>
 
     <p>
       If you want to create your own plugin, you can see how to do it <a href="#creating-plugins">Creating Plugins</a> chapter.
+      You can also find ready to use plugins in our <a href="#links-plugins">directory</a>.
     </p>
+
+    <p>
+      To use a plugin you should install it:
+    </p>
+
+    <pre>const go = require('go')
+const MyPlugin = require('my-go-plugin')
+
+go.use(MyPlugin)</pre>
 
     <h2 id="what-is-loader">What is Loader?</h2>
 
+    <p>
+      Go let's you to host your boilerplates everywhere you want.
+      It uses <strong>loaders</strong> to install them from any source.
+      If a loader for your preferred source is missing you can <a href="#creating-loaders">create your own loader</a>.
+    </p>
+
+    <p>
+      Here are loaders that are pre-installed with Go:
+    </p>
+
     <h3 id="git-loader">Git Loader</h3>
 
-    <h3 id="more-loaders">More Loaders</h3>
+    <p>
+      With Git Loader you can use git repositories as a source of your boilerplate.
+      You can use both https and ssh links to load them:
+    </p>
+
+    <pre>$ go git https://gitlab.com/repo/name.git
+$ go git git@gitlab.com:repo/name.git</pre>
+
+    <p>
+      Go to <a href="https://npmjs.org/package/go-loader-git">Git Loader page</a> to read more about it.
+    </p>
 
     <p>
       More loaders can be viewed in <a href="#links-loaders">links section</a>.
-      If you wonder how to create your own loader check <a href="#creating-loaders">Creating Loaders</a> chapter.
     </p>
 
     <h2 id="contributing">Contributing</h2>
 
     <p>
-      <strong>Go</strong> is higly extensible for yout needs!
+      Go is higly extensible for yout needs!
     </p>
 
     <h3 id="creating-plugins">Creating Plugins</h3>
 
     <p>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-      At vero eos et accusam et justo duo dolores et ea rebum.
-      Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      <strong>Go plugin</strong> is a function or an object with a function stored under <strong>install</strong> key.
+      The function will be called with Go prototype object and options given when registering plugin.
     </p>
+
+    <pre>const go = require('go')
+
+const LoggerPlugin = proto => {
+  const time = () => (new Date).toString().split(' ')[4]
+  proto.log = (...args) => console.log(time(), ...args)
+}
+
+go.use(LoggerPlugin)</pre>
+
+    <p>
+      Example, with options object:
+    </p>
+
+    <pre>const go = require('go')
+
+const AdvancedLoggerPlugin = (proto, options = {}) => {
+  const time = () => {
+    const date = (new Date).toString().split(' ')
+    if (options.withDate) {
+      return date.slice(1, 5).join(' ')
+    }
+    return date[4]
+  }
+  proto.log = (...args) => console.log(time(), ...args)
+}
+
+go.use(AdvancedLoggerPlugin, { withDate: true })</pre>
 
     <h3 id="creating-loaders">Creating Loaders</h3>
 
     <p>
-      Do not name your plugins after GoLang commands.
+      Loaders are NPM packages named as <code>go-loader-NAME</code>.
+      The <code>NAME</code> will be used to trigger the loader.
+      The package should export an object with <strong>execute</strong> key containing a function.
+      This function will be called with args given when loader is executed.
     </p>
+
+    <p>Here is an example of a loader that installs boilerplates from Zip archives:</p>
+
+    <h4>package.json</h4>
+
+    <pre>{
+  "name": "go-laoder-zip",
+  "main": "loader.js",
+  "dependencies": {
+    "decompress": "*",
+    "decompress-unzip": "*"
+  }
+}</pre>
+
+    <h4>loader.js</h4>
+
+    <pre>const decompress = require('decompress')
+const decompressUnzip = require('decompress-unzip')
+
+const ZipLoader = async ({ args }) => {
+  const [ loader, source, destination ] = args
+  if (!source || !source.toLowerCase().endsWith('.zip')) {
+    throw new Error('path to zip is required')
+  }
+
+  return decompress(
+    source,
+    destination || source.slice(0, -4),
+    { plugins: [decompressUnzip()] }
+  )
+}
+
+exports.execute = ZipLoader</pre>
+
+    <p>
+      This loader can be installed as a global or local package.
+      And then it can be called in a such way:
+    </p>
+
+    <pre>$ go zip ./boilerplates/extension.zip ./new-extension</pre>
+
+    <blockquote>
+      <strong>Do not name your plugins after GoLang commands!</strong>
+      This will cause troubles for developers who will install your loader and is using Go programming language.
+    </blockquote>
 
     <h2 id="links">Links</h2>
 
